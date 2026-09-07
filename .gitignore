@@ -4,6 +4,12 @@
 .vscode/
 build/
 
+# Platform folders not used in this Android/web handover
+ios/
+linux/
+macos/
+windows/
+
 # Flutter/Dart local files
 .packages
 .flutter-plugins
