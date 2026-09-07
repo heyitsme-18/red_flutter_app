@@ -1,0 +1,22 @@
+.dart_tool/
+.dart_cache/
+.idea/
+.vscode/
+build/
+
+# Flutter/Dart local files
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Local Firebase config/run scripts
+RUN_WITH_FIREBASE.ps1
+
+# Downloaded/reference material for local development only
+drive_folder.html
+ios_reference_*.mp4
+video_frames/
+
+# OS files
+.DS_Store
+Thumbs.db
