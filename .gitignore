@@ -5,7 +5,7 @@
 *.iml
 build/
 
-# Platform folders not used in this Android/web handover
+# Unused generated platform folders for this prototype
 ios/
 linux/
 macos/
@@ -16,11 +16,11 @@ windows/
 .flutter-plugins
 .flutter-plugins-dependencies
 
-# Local Firebase config/run scripts
+# Local Firebase run scripts
 RUN_WITH_FIREBASE.ps1
 RUN_WITH_FIREBASE_TEMPLATE.ps1
 
-# Local handover/helper notes
+# Local development notes
 FIREBASE_CONTENT_SCHEMA.md
 GITHUB_HANDOVER_CHECKLIST.md
 HANDOVER_SUMMARY.md
