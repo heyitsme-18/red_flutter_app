@@ -1,3 +1,4 @@
+# Android local build files
 /.gradle
 /captures/
 /local.properties
