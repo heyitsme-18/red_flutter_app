@@ -67,5 +67,3 @@ Build an Android APK:
 ```powershell
 flutter build apk --dart-define=FIREBASE_ENABLED=true --dart-define=FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
 ```
-
-Do not commit private Firebase credentials or local run scripts to GitHub.
