@@ -1,27 +1,19 @@
-# red. Flutter App Prototype
+# red. Flutter App
 
-This is the Flutter/Dart prototype for the red. mindfulness app. It was previewed in Chrome during development because Android emulator setup was not completed yet, but the codebase is a Flutter app and can run on Android once Android Studio/SDK is configured.
+Flutter prototype for the red. mindfulness app, focused on Android development with a web preview used during testing.
 
-## What is included
+## Main features
 
-- Logo splash screen: `red.`
-- Intro splash screen: `Pause. Breathe. Glow.`
-- Bottom navigation with Home, Collections, Meditations, Journal, and Settings
-- Firebase Storage connection for meditation audio, meditation thumbnails, collection thumbnails, collection detail thumbnails, and collection PDFs
-- Audio player with play/pause, 10-second rewind/forward, draggable timeline slider, and mini-player
-- Universe Collection page with Firebase thumbnail/PDF mapping
-- Journal screen with Daily Glow and Universe Collection tabs, interactive calendar, mood/toggle fields, and journal note field
-- Settings pages for profile placeholder, About red., Privacy Policy, Terms and conditions, and Feedback placeholder
+- Home, Collections, Meditations, Journal, and Settings tabs
+- Firebase Storage integration for meditation audio, thumbnails, collection images, and collection PDFs
+- Audio player with play/pause, skip controls, draggable progress slider, and mini-player
+- Universe Collection screen with Firebase image and PDF mapping
+- Journal screen with Daily Glow and Universe Collection sections
+- Settings screens for profile placeholder, About red., Privacy Policy, Terms and Conditions, and Feedback placeholder
 
-## Firebase project used
+## Firebase content folders
 
-Bucket:
-
-```text
-red-app-b361a.firebasestorage.app
-```
-
-The app currently reads content from these Storage folders:
+The prototype expects Firebase Storage content in these folders:
 
 ```text
 audio/
@@ -31,13 +23,13 @@ collection-detail-thumbnails/universe/
 collection-pdfs/universe/
 ```
 
-Optional long text can come from Firestore:
+Optional long text can be provided from Firestore at:
 
 ```text
 app_text/red
 ```
 
-Expected optional fields:
+Expected text fields:
 
 ```text
 collectionDescription
@@ -46,62 +38,34 @@ privacyPolicy
 terms
 ```
 
-If Firestore text is missing, the app uses local fallback text.
+## Current note
 
-## Current known limitation
+Universe Collection images and PDFs are mapped from Firebase. The matching Universe Collection audio files were not available in the checked Firebase Storage folders, so those journey audios are marked as pending in the prototype.
 
-Universe Collection audio is not currently linked because the matching audio files were not found in the readable Firebase folders. The app maps Universe Collection images and PDFs, but the journey audio remains pending.
+## Running the app
 
-Expected Universe journey audio names:
-
-```text
-Creation
-Void
-Time
-Stardust
-Orbit
-Expansion
-Infinity
-```
-
-## How to run the current preview
-
-From PowerShell:
+Install Flutter dependencies:
 
 ```powershell
-cd "C:\Users\ashra\Documents\App Development\red_flutter_app"
-.\RUN_WITH_FIREBASE.ps1
+flutter pub get
 ```
 
-If the app is already running, press `q` in the terminal first, then run the script again.
-
-For a new laptop or fresh clone, copy `RUN_WITH_FIREBASE_TEMPLATE.ps1` to `RUN_WITH_FIREBASE.ps1` and fill in the Firebase values from Firebase Console before running.
-
-## How to run later as Android app
-
-Install and configure:
-
-- Android Studio
-- Android SDK
-- Android Emulator, or connect a real Android phone
-- Android licenses through Flutter
-
-Then run:
+Run the web preview:
 
 ```powershell
-flutter doctor
-flutter doctor --android-licenses
-flutter run -d android
+flutter run -d chrome --dart-define=FIREBASE_ENABLED=true --dart-define=FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
 ```
 
-To build an installable Android APK:
+Run on Android after Android Studio, Android SDK, and an emulator/device are configured:
 
 ```powershell
-flutter build apk
+flutter run -d android --dart-define=FIREBASE_ENABLED=true --dart-define=FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
 ```
 
-## Notes for GitHub
+Build an Android APK:
 
-Recommended: create a private GitHub repository unless the company gives permission for a public repo.
+```powershell
+flutter build apk --dart-define=FIREBASE_ENABLED=true --dart-define=FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
+```
 
-Do not commit secrets or private credentials. The current Firebase values are passed through the run script / Dart defines and should be reviewed before sharing externally.
+Do not commit private Firebase credentials or local run scripts to GitHub.

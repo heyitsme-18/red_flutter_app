@@ -2,6 +2,7 @@
 .dart_cache/
 .idea/
 .vscode/
+*.iml
 build/
 
 # Platform folders not used in this Android/web handover
@@ -17,6 +18,15 @@ windows/
 
 # Local Firebase config/run scripts
 RUN_WITH_FIREBASE.ps1
+RUN_WITH_FIREBASE_TEMPLATE.ps1
+
+# Local handover/helper notes
+FIREBASE_CONTENT_SCHEMA.md
+GITHUB_HANDOVER_CHECKLIST.md
+HANDOVER_SUMMARY.md
+MEETING_SCRIPT.md
+SETUP_FLUTTER_AND_FIREBASE.md
+SUPERVISOR_QUESTIONS.md
 
 # Downloaded/reference material for local development only
 drive_folder.html
